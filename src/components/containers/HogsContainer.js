@@ -23,7 +23,8 @@ class HogsContainer extends React.Component {
                 this.setState({hogs: hogs})
                 break;
             case "name":
-                let sortedHogs = this.state.hogs.sort((a,b) => {
+                let sortedHogs = [...this.state.hogs]
+                sortedHogs.sort((a,b) => {
                     if ( a.name < b.name ){
                         return -1;
                       }
@@ -35,7 +36,8 @@ class HogsContainer extends React.Component {
                 this.setState({hogs: sortedHogs})
                 break;
             case 'weight': {
-                let sortedHogs = this.state.hogs.sort((a,b) => {
+                let sortedHogs = [...this.state.hogs]
+                sortedHogs.sort((a,b) => {
                     return a.weight - b.weight
                 })
                 this.setState({hogs: sortedHogs})
